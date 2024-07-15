@@ -1,0 +1,33 @@
+<div class="container">
+    <app-mainslider></app-mainslider>
+    <app-cateogriesslider></app-cateogriesslider>
+    
+    <div class="w-75 mx-auto my-5">
+       <input type="text" class="form-control" placeholder="Search......">
+   </div>
+        <div class="row">
+            <div *ngFor="let x of dishomeproducts" class="col-md-3 col-sm-4  g-3">
+                <div class="p-4 product rounded shadow">
+                    <a [routerLink]="['/productdetails',x._id]">
+                        <img class="w-100" [src]="x.imageCover" [alt]="x.description">
+                        <p class="font-sm text-main">{{x.category.name}}</p>
+                        <p class="fw-bold font-sm">{{x.title.split(" ").slice(0,2).join(' ')}}</p>
+                        <div class="d-flex justify-content-between mx-3">
+                            <p>{{x.price}} EGP</p>
+                            <p><i class="fa-solid fa-star text-danger"></i>{{x.ratingsAverage}}</p>
+                        </div>
+                    </a>
+                    <a (click)="addwish(x._id)" class="cursor text-end ">
+                        <i class="fa-solid fa-heart fs-4 cursor"></i>
+                    </a>
+                        <div class="d-flex justify-content-center">
+                            <button (click)="addproduct(x._id)" class=" btn bg-main text-white w-75">+ add To Cart</button>
+                        </div>
+                        
+                </div>
+            </div>
+    </div>
+  
+    
+</div>
+<app-spinner *ngIf="isloading"></app-spinner>

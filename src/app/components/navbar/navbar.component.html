@@ -1,0 +1,52 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container ">
+      <a class="navbar-brand" ><img src="./assets/images/freshcart-logo.svg" ></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        
+
+        <ul *ngIf="isloggeduser" class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="cart" >Cart</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="wishlist" >Wish list</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="products" >Products</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="cateogries" >Cateogries</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="brands" >Brands</a>
+          </li>
+          
+        </ul>
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li *ngIf="!isloggeduser" class="nav-item">
+            <a class="nav-link active" aria-current="page" routerLink="register">register</a>
+          </li>
+          <li *ngIf="!isloggeduser" class="nav-item">
+            <a class="nav-link" routerLink="login">login</a>
+          </li>
+          <li *ngIf="isloggeduser" class="nav-item">
+            <a class="nav-link cusrer" (click)="logOut()" >logOut</a>
+          </li>
+          <li *ngIf="isloggeduser" class="nav-item">
+            <a class="nav-link position-relative" routerLink="/cart">
+              <i class="fas fa-cart-shopping text-main"></i>
+              <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger font">{{numberodcartitems}}</span>
+            </a>
+          </li>
+          
+        </ul>
+       
+      </div>
+    </div>
+  </nav>

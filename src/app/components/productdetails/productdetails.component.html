@@ -1,0 +1,35 @@
+<div class="container my-5">
+    <div class="row align-items-center py-5">
+        <div class="col-md-4 p-5 border">
+            <owl-carousel-o [options]="customOptions">
+
+                <ng-container *ngFor="let slide of specificproducts?.images">
+                  <ng-template carouselSlide >
+                    <img [src]="slide" >
+                  </ng-template>
+                </ng-container>
+            
+              </owl-carousel-o>
+            <!-- <img class="w-100" [src]="specificproducts?.imageCover" alt=""> -->
+        </div>
+        <div class="col-md-8">
+            <div class="p-5">
+                <h3>{{specificproducts?.title}}</h3>
+                <p>{{specificproducts?.description}}</p>
+                <span>{{specificproducts?.category.name}}</span>
+            </div>
+            <div class="px-5">
+                <p>Available quantity : {{specificproducts?.quantity}}</p>
+                <p>Brand : {{specificproducts?.brand.name}}</p>
+            </div>
+            <div class="d-flex justify-content-between mx-3 px-5">
+                <p>{{specificproducts?.price}} EGP</p>
+                <p><i class="fa-solid fa-star text-danger"></i>{{specificproducts?.ratingsAverage}}</p>
+            </div>
+            <div class="d-flex justify-content-center py-5">
+                <button (click)="addproduct(specificproducts._id)"  class=" btn bg-main text-white w-75">+ add To Cart</button>
+            </div>
+
+        </div>
+    </div>
+</div>

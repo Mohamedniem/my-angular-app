@@ -1,0 +1,10 @@
+<div class="container">
+    <div class="row ">
+        <div *ngFor="let y of categories" class="col-md-4   mx-auto">
+            <div class=" m-4 border g-3 text-center rounded-1">
+                <img height="300" class="w-100 object-fit-cover" [src]="y.image" alt="">
+                <h3 class="h4 p-3 fw-bold">{{y.name}}</h3>
+            </div>
+        </div>
+    </div>
+</div>

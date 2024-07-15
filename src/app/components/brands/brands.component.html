@@ -1,0 +1,14 @@
+
+<div class="container my-5">
+    <div  class="row  ">
+        <div *ngFor="let B of disbrands" class="col-md-3 my-2">
+          <div class="card h-100">
+            <img [src]="B.image" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title text-center">{{B.name}}</h5>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+</div>
